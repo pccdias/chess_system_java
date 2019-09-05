@@ -1,5 +1,7 @@
 package boardgame;
 
+import java.util.Arrays;
+
 public class Board {
 	private int rows;
 	private int columns;
@@ -22,10 +24,10 @@ public class Board {
 	public int getColumns() {
 		return columns;
 	}
-
-	public void setColumns(int columns) {
-		this.columns = columns;
-	}
+	
+//	public void setColumns(int columns) {
+//		this.columns = columns;
+//	}
 	
 	public Piece piece(int row, int column) {
 		if (!positionExists(row,column)) {
@@ -78,6 +80,13 @@ public class Board {
 		}
 		return piece(position) != null;
 		
+	}
+
+	@Override
+	public String toString() {
+		return "Board [rows=" + rows + ", columns=" + columns + ", pieces=" + Arrays.toString(pieces) + ", getRows()="
+				+ getRows() + ", getColumns()=" + getColumns() + ", getClass()=" + getClass() + ", hashCode()="
+				+ hashCode() + ", toString()=" + super.toString() + "]";
 	}
 
 	
